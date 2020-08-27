@@ -1,0 +1,20 @@
+apiVersion: torpedo.k8s.att.io/v1
+kind: Torpedo
+metadata:
+  name: example-test
+spec:
+  # Varies from plugin image to image 
+  job-params:
+    - - traffic-params:
+      #service-mapping: promenade 
+          traffic-module: generic
+          custom:
+            image: ''
+            args: ''
+          endpoint: ''
+          request: 'get/post'
+          extra-headers: ''
+          auth:
+            auth_url: http://keystone-api.ucp.svc.cluster.local:5000/v3
+            username: admin
+            password: abcdefghijk
