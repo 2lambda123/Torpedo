@@ -26,7 +26,7 @@ class Pods(Kubernetes):
         host = kwargs.get("host", None)
         token = kwargs.get("token", None)
         super().__init__(token=token, host=host)
-        self.pod_conn = client.CoreV1Api(self.api_client)
+        self.pod_conn = client.CoreV1Api()
 
     def get_pods(self, **kwargs):
 
