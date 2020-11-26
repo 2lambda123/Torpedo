@@ -26,7 +26,7 @@ class Jobs(Kubernetes):
         host = kwargs.get("host", None)
         token = kwargs.get("token", None)
         super().__init__(token=token, host=host)
-        self.job_conn = client.BatchV1Api(self.api_client)
+        self.job_conn = client.BatchV1Api()
 
     def create_job(self, **kwargs):
 

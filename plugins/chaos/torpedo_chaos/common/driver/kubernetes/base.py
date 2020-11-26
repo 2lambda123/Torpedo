@@ -27,7 +27,7 @@ urllib3.disable_warnings()
 class Kubernetes(object):
 
     def __init__(self, **kwargs):
-        config.load_kube_config()
-        conf = client.Configuration()
-        conf.verify_ssl = False
-        self.api_client = client.ApiClient(conf)
+        if os.path.exists(os.environ['KUBECONFIG']):
+            config.load_kube_config()
+        else:
+            config.load_incluster_config()
