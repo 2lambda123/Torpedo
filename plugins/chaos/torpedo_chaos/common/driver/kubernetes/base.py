@@ -27,7 +27,7 @@ urllib3.disable_warnings()
 class Kubernetes(object):
 
     def __init__(self, **kwargs):
-        if os.path.exists('/root/.kube/config') or "KUBECONFIG" in os.environ:
+        if os.path.exists(os.environ['KUBECONFIG']):
             config.load_kube_config()
         else:
             config.load_incluster_config()
