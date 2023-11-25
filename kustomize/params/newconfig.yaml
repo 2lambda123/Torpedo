@@ -1,0 +1,18 @@
+apiVersion: torpedo.k8s.att.io/v1 
+kind: Torpedo 
+metadata: 
+  name: example-test 
+spec: 
+  # Varies from plugin image to image 
+  job-params: 
+    - - name: fed-consul 
+#Common params 
+        job-duration: 120 
+        count: 0 
+        remote-cluster: 'True' 
+        volume_storage_class: 'standard' 
+        volume_storage: '1Gi' 
+        volume_name: 'ucp-torpedo'
+        chaos-params:      
+        sanity-params:
+        traffic-params:  

@@ -1,0 +1,11 @@
+apiVersion: torpedo.k8s.att.io/v1
+kind: Torpedo
+metadata:
+  name: example-test
+spec:
+  # Varies from plugin image to image 
+  job-params:
+  - - sanity-params:   
+        image: ''
+        extra-args: ''
+        privileged: True

@@ -1,0 +1,24 @@
+apiVersion: torpedo.k8s.att.io/v1
+kind: Torpedo
+metadata:
+  name: example-test
+spec:
+  # Varies from plugin image to image 
+  job-params:
+# Chaos Params 
+    - - chaos-params:
+          cluster-config:
+            name: rdm10
+            apiserver: ''
+            token: ''
+          image: ''
+          kill-interval: 30
+          kill-count: 30
+          same-node: False
+          pod-labels:
+            - 'app=db'
+          node-labels: []
+          nodes: ''
+          max-nodes: 1
+          namespace: mobility-oam
+          extra-args: ''
